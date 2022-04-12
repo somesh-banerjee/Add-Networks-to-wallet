@@ -145,6 +145,42 @@ function App() {
     }
   }
 
+  const Avalanche = async() => {
+    try {
+      await window.ethereum.request({ method: 'eth_requestAccounts' });
+      await window.ethereum.request({
+        method: 'wallet_addEthereumChain',
+        params: [
+          {
+            chainId: '0xa86a',
+            chainName: 'Avalanche Mainnet C-Chain',
+            rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
+          },
+        ],
+      });
+    } catch (e) {
+      alert(e.message)
+    }
+  }
+
+  const Fuji = async() => {
+    try {
+      await window.ethereum.request({ method: 'eth_requestAccounts' });
+      await window.ethereum.request({
+        method: 'wallet_addEthereumChain',
+        params: [
+          {
+            chainId: '0xa869',
+            chainName: 'Avalanche FUJI C-Chain',
+            rpcUrls: ['https://api.avax-test.network/ext/bc/C/rpc'],
+          },
+        ],
+      });
+    } catch (e) {
+      alert(e.message)
+    }
+  }
+
   return (
     <div>
       <h1>Add Networks to your wallet</h1>
@@ -157,6 +193,8 @@ function App() {
       <button onClick={Goerli}>Add Goerli Test Network</button>
       <button onClick={Ropsten}>Add Ropsten Test Network</button>
       <button onClick={Sokol}>Add SOKOL POA Test Network</button>
+      <button onClick={Avalanche}>Add Avalanche Main Network</button>
+      <button onClick={Fuji}>Add FUJI Test Network</button>
     </div>
   );
 }
