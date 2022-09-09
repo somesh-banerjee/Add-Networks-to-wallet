@@ -16,4 +16,5 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: npm i
-      - run: npm start
+      - run: npm run build
+      - run: cp -R build/ /home/master/production/
