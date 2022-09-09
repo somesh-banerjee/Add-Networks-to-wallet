@@ -183,7 +183,7 @@ function App() {
 
   return (
     <div>
-      <h1>Add Networks to your wallet</h1>
+      <h1>Add Networks to your Metamask wallet</h1>
 
       <button onClick={Polygon}>Add Polygon Main Network</button>
       <button onClick={Mumbai}>Add Mumbai Test Network</button>
