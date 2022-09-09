@@ -16,4 +16,4 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: npm i
-      - run: npm run build
+      - run: npm start
